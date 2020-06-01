@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary pr-5">
+  <a class="navbar-brand" href="#">Dating App</a>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/members']">Matches</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link"  [routerLink]="['/lists']">List</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link"  [routerLink]="['/messages']">Messages</a>
+    </li>
+    <li class="nav-item" *ngIf="loggedIn()">
+      <a class="nav-link" href="#" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+
+  <div class="dropdown" dropdown  *ngIf="loggedIn()">
+    <span class="mr-2">
+      <img src="{{ photoUrl || '../../../../assets/user.png'}}" alt=""/>
+    </span> 
+    <a
+      class="dropdown-toggle text-light"
+      *ngIf="loggedIn()"
+      dropdownToggle
+    >
+      Welcome {{ authService.username }}
+    </a>
+
+    <div class="dropdown-menu" *dropdownMenu>
+      <a href="#" class="dropdown-item" [routerLink]="['/member/edit']"
+        ><i class="fa fa-user"></i>Edit Profile</a
+      >
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item" (click)="logout()"
+        ><i class="fa fa-sign-out"></i>Logout</a
+      >
+    </div>
+  </div>
+
+  <form
+    #loginForm="ngForm"
+    *ngIf="!loggedIn()"
+    class="form-inline my-2 my-lg-0"
+    (submit)="login()"
+    autocomplete="off"
+  >
+    <input
+      class="form-control mr-sm-2"
+      name="Username"
+      autocomplete="off"
+      type="text"
+      required
+      [(ngModel)]="model.Username"
+    />
+    <input
+      class="form-control mr-sm-2"
+      type="password"
+      name="Password"
+      required
+      [(ngModel)]="model.Password"
+    />
+    <button
+      class="btn btn-success my-2 my-sm-0"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    >
+      Search
+    </button>
+  </form>
+</nav>
+
+<!-- <pre>
+  Form Valid: {{loginForm.valid}}
+  Form Touched: {{loginForm.touched}}
+  Form Dirty: {{loginForm.dirty}}
+  Form Values: {{loginForm.value | json}}
+
+  Username Valid: {{username.valid}}
+  Username Touched: {{username.touched}}
+  Username Dirty: {{username.dirty}}
+  Username Values: {{username.value | json}}
+
+  Password Valid: {{password.valid}}
+  Password Touched: {{password.touched}}
+  Password Dirty: {{password.dirty}}
+  Password Values: {{password.value | json}}
+</pre> -->
