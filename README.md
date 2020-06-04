@@ -1,13 +1,11 @@
 # DatingApp
-Dating App ( Angular 9 / .Net WebAPI Core / Entity Framework core)
-
-web application from start to publishing using ASPNET Core (v2.1), Entity Framework Core and Angular (v6)
+Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.0)
 
 Integrated 3rd party components like Alertify.js as service wrapper into the Angular application
 
 Used Visual Studio code effectively to improve workflow
 
-Used AutoMapper
+Used AutoMapper in webapi core.
 
 Implemented drag and drop photo upload integrating into a cloud platform (cloudinary)
 
@@ -32,3 +30,5 @@ Used ngx-loader to show loader on each http request and hide loader on http resp
 Implemeted Routing. Secured routes with CanActivate and CanDeActivate guards.
 
 Implemented resolvers to pass data in route.
+
+Implemented Angular Reactive forms.
