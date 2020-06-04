@@ -21,4 +21,6 @@ Implemented Authentication using JWT Authentication tokens for securing Webapi's
 
 Handled errors in the API and the SPA
 
-Persist data using Entity Framework Core
+Persist data using Entity Framework Core.
+
+Used Repository Pattern, created generic Repository for adding another layer of abstraction over Entity Franework. 
