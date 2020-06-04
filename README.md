@@ -23,7 +23,7 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 
 - Used Repository Pattern, created generic Repository for adding another layer of abstraction over Entity Franework. 
 
-- Implemented common error handling in Angular and .net core to show Api errors on client app.
+- Implemented common error handling in Angular and .net core to show webapi errors on client app.
 
 - Used ngx-loader to show loader on each http request and hide loader on http response.
 
