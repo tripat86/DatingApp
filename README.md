@@ -13,6 +13,8 @@ Implemented drag and drop photo upload integrating into a cloud platform (cloudi
 
 Implemented a private messaging system
 
+Implemented functioanlity where user can like profiles of other user's profile( of opposite sex )
+
 Implemented filtering, sorting and paging of data
 
 Implemented Authentication using JWT Authentication tokens for securing Webapi's.
