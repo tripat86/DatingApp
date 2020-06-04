@@ -1,34 +1,34 @@
 # DatingApp
 Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.0)
 
-Integrated 3rd party components like Alertify.js as service wrapper into the Angular application
+- Integrated 3rd party components like Alertify.js as service wrapper into the Angular application
 
-Used Visual Studio code effectively to improve workflow
+- Used Visual Studio code effectively to improve workflow
 
-Used AutoMapper in webapi core.
+- Used AutoMapper in webapi core.
 
-Implemented drag and drop photo upload integrating into a cloud platform (cloudinary)
+- Implemented drag and drop photo upload integrating into a cloud platform (cloudinary)
 
-Implemented a private messaging system
+- Implemented a private messaging system
 
-Implemented functioanlity where user can like profiles of other user's profile( of opposite sex )
+- Implemented functioanlity where user can like profiles of other user's profile( of opposite sex )
 
-Implemented filtering, sorting and paging of data
+- Implemented filtering, sorting and paging of data
 
-Implemented Authentication using JWT Authentication tokens for securing Webapi's.
+- Implemented Authentication using JWT Authentication tokens for securing Webapi's.
 
-Handled errors in the API and the SPA
+- Handled errors in the API and the SPA
 
-Persist data using Entity Framework Core.
+- Persist data using Entity Framework Core.
 
-Used Repository Pattern, created generic Repository for adding another layer of abstraction over Entity Franework. 
+- Used Repository Pattern, created generic Repository for adding another layer of abstraction over Entity Franework. 
 
-Implemented common error handling in Angular and .net core to show Api errors on client app.
+- Implemented common error handling in Angular and .net core to show Api errors on client app.
 
-Used ngx-loader to show loader on each http request and hide loader on http response.
+- Used ngx-loader to show loader on each http request and hide loader on http response.
 
-Implemeted Routing. Secured routes with CanActivate and CanDeActivate guards.
+- Implemeted Routing. Secured routes with CanActivate and CanDeActivate guards.
 
-Implemented resolvers to pass data in route.
+- Implemented resolvers to pass data in route.
 
-Implemented Angular Reactive forms.
+- Implemented Angular Reactive forms.
