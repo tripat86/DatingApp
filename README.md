@@ -1,5 +1,5 @@
 # DatingApp
-Dating App ( Angular / .Net WebAPI Core / Entity Framework core)
+Dating App ( Angular 9 / .Net WebAPI Core / Entity Framework core)
 
 web application from start to publishing using ASPNET Core (v2.1), Entity Framework Core and Angular (v6)
 
@@ -24,3 +24,11 @@ Handled errors in the API and the SPA
 Persist data using Entity Framework Core.
 
 Used Repository Pattern, created generic Repository for adding another layer of abstraction over Entity Franework. 
+
+Implemented common error handling in Angular and .net core to show Api errors on client app.
+
+Used ngx-loader to show loader on each http request and hide loader on http response.
+
+Implemeted Routing. Secured routes with CanActivate and CanDeActivate guards.
+
+Implemented resolvers to pass data in route.
