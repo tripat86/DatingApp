@@ -7,15 +7,15 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 
 - Used AutoMapper in webapi core.
 
-- Implemented drag and drop photo upload integrating into a cloud platform (cloudinary)
+- Drag and drop photo upload integration into a cloud platform (cloudinary)
 
-- Implemented a private messaging system
+- Private messaging system
 
-- Implemented functioanlity where user can like profiles of other user's profile( of opposite sex )
+- User can like profiles of other users( of opposite sex ) and can recieve likes from other users as well. Implemented Many-To-Many relationships.
 
-- Implemented filtering, sorting and paging of data
+- Filtering, sorting and paging of data
 
-- Implemented Authentication using JWT Authentication tokens for securing Webapi's.
+- Authentication using JWT Authentication tokens for securing Webapi's.
 
 - Handled errors in the API and the SPA
 
@@ -23,12 +23,12 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 
 - Used Repository Pattern, created generic Repository for adding another layer of abstraction over Entity Franework. 
 
-- Implemented common error handling in Angular and .net core to show webapi errors on client app.
+- Common error handling in Angular and .net core to show webapi errors on client app. Used Http Interceptors.
 
-- Used ngx-loader to show loader on each http request and hide loader on http response.
+- ngx-loader to show loader on each http request and hide loader on http response.
 
 - Implemeted Routing. Secured routes with CanActivate and CanDeActivate guards.
 
-- Implemented resolvers to pass data in route.
+- Resolvers to pass data in route.
 
-- Implemented Angular Reactive forms.
+- Used Angular Reactive forms.
