@@ -56,6 +56,8 @@ namespace DatingApp.API.Data
 
             users = users.Where(user => user.Gender == userParams.Gender);
 
+            # region "Filtering"
+
             if(userParams.Likers)
             {
                 var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
@@ -75,6 +77,9 @@ namespace DatingApp.API.Data
 
                 users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
             }
+            #endregion
+
+            #region "Sorting"
 
             if(!string.IsNullOrEmpty(userParams.OrderBy))
             {
@@ -88,6 +93,8 @@ namespace DatingApp.API.Data
                         break;
                 }
             }
+            #endregion
+
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
@@ -111,6 +118,51 @@ namespace DatingApp.API.Data
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<Message> GetMessage(int id)
+        {
+            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+        }
+
+        public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
+        {
+            var messages = _context.Messages
+                    .Include(m => m.Sender).ThenInclude(u => u.Photos)
+                    .Include(m => m.Recipient).ThenInclude(u => u.Photos)
+                    .AsQueryable();
+
+            switch(messageParams.MessageContainer)
+            {
+                case "Inbox":
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId && u.RecipientDeleted == false);
+                    break;
+                case "Outbox":
+                    messages = messages.Where(u => u.SenderId == messageParams.UserId && u.SenderDeleted == false);
+                    break;
+                default:
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId && u.RecipientDeleted == false && u.IsRead == false);
+                    break;
+            }
+
+            messages = messages.OrderByDescending(d => d.MessageSent);
+
+            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+        }
+
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        {
+            // This query is going to return the conversation between the 2 users i.e mesages 
+            // sent by the user to the recipient and messages recived to user by recipient
+            var messages = await _context.Messages
+                    .Include(m => m.Sender).ThenInclude(u => u.Photos)
+                    .Include(m => m.Recipient).ThenInclude(u => u.Photos)
+                    .Where(m => m.SenderId == userId && m.RecipientId == recipientId && m.SenderDeleted == false 
+                    || m.SenderId == recipientId && m.RecipientId == userId && m.RecipientDeleted == false)
+                    .OrderByDescending(m => m.MessageSent)
+                    .ToListAsync();
+            
+            return messages;
         }
     }
 }

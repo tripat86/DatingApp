@@ -21,6 +21,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
@@ -33,6 +34,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessageListResolver } from './_resolvers/message-list.resolver';
 
 
 export function tokenGetter() {
@@ -52,7 +54,8 @@ export function tokenGetter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -84,7 +87,8 @@ export function tokenGetter() {
       MemberListResolver,
       MemberEditResolver,
       MemberDetailResolver,
-      ListsResolver
+      ListsResolver,
+      MessageListResolver
    ],
    bootstrap: [
       AppComponent

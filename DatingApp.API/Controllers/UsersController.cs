@@ -101,5 +101,11 @@ namespace DatingApp.API.Controllers
 
             return BadRequest("Failed to like user");
         }
+
+        // [HttpPost("{id}/message/{recipientId}")]
+        // public async Task<IActionResult> MessageUser(int id, int recipientId)
+        // {
+
+        // }
     }
 }
