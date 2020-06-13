@@ -7,9 +7,7 @@ import { catchError } from 'rxjs/operators';
 import { AlertifyService } from '../_services/Alertify.service';
 import { PaginatedResult } from '../_models/pagination';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 
 export class ListsResolver implements Resolve<PaginatedResult<User[]>> {
     pageNumber = 1;
