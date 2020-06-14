@@ -9,7 +9,7 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 
 - Drag and drop photo upload integration into a cloud platform (cloudinary)
 
-- Private messaging system
+- Private messaging Chat system
 
 - User can like profiles of other users( of opposite sex ) and can recieve likes from other users as well. Implemented Many-To-Many relationships.
 
