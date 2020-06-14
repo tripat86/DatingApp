@@ -2,7 +2,7 @@
 
 Demo
 
-![DatingApp Demo](../../DatingApp/DatingApp-SPA/src/assets/DatingApp_Demo.gif)
+![DatingApp Demo](../../../DatingApp/DatingApp-SPA/src/assets/DatingApp_Demo.gif)
 
 Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.0) )
 
