@@ -37,3 +37,5 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 - Resolvers to pass data in route.
 
 - Used Angular Reactive forms.
+
+- Implemented lazy loading to load related navigation properties in entity so Entity Framework core loads navigation properties when it needs them.
