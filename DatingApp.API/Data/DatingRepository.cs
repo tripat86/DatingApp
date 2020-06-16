@@ -155,8 +155,6 @@ namespace DatingApp.API.Data
             // This query is going to return the conversation between the 2 users i.e mesages 
             // sent by the user to the recipient and messages recived to user by recipient
             var messages = await _context.Messages
-                    .Include(m => m.Sender).ThenInclude(u => u.Photos)
-                    .Include(m => m.Recipient).ThenInclude(u => u.Photos)
                     .Where(m => m.SenderId == userId && m.RecipientId == recipientId && m.SenderDeleted == false 
                     || m.SenderId == recipientId && m.RecipientId == userId && m.RecipientDeleted == false)
                     .OrderByDescending(m => m.MessageSent)
