@@ -2,7 +2,7 @@
 
 Demo
 
-Azure published - https://dappdemo.azurewebsites.net/ - Login with username as "lola" and password as "password"
+Azure published - https://dappdemo.azurewebsites.net/ - Register with your information and check the flow OR to check application flow, you can just login with an existing user having username as "lola" and password as "password"
 
 ![DatingApp Demo](DatingApp-SPA/src/assets/DatingApp_Demo.gif)
 
@@ -43,3 +43,5 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 - Implemented lazy loading to load related navigation properties in entity so Entity Framework core loads navigation properties when it needs them.
 
 - Deployed to Azure
+
+- HTTPS certificate applied
