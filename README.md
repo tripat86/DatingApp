@@ -2,9 +2,11 @@
 
 Demo
 
+Azure published - https://dappdemo.azurewebsites.net/ - Login with username as "lola" and password as "password"
+
 ![DatingApp Demo](DatingApp-SPA/src/assets/DatingApp_Demo.gif)
 
-Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.0) )
+Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.0) / SQL Server)
 
 - Integrated 3rd party components like Alertify.js as service wrapper into the Angular application
 
@@ -39,3 +41,5 @@ Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.
 - Used Angular Reactive forms.
 
 - Implemented lazy loading to load related navigation properties in entity so Entity Framework core loads navigation properties when it needs them.
+
+- Deployed to Azure
