@@ -43,7 +43,7 @@ namespace DatingApp.API
         public void ConfigureProductionServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => {
-                x.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
+                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             ConfigureServices(services);
@@ -97,9 +97,11 @@ namespace DatingApp.API
                          // Here we are writing our error message in Http response as well
                     });
                 });
+                app.UseHsts();
             }
 
-            // app.UseHttpsRedirection();
+            //app.UseDeveloperExceptionPage();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

@@ -27,8 +27,8 @@ namespace DatingApp.API
                     
                 }
                 catch(Exception ex) {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError("Error occurred during migration -" + ex.InnerException.Message);
+                    // var logger = services.GetRequiredService<ILogger<Program>>();
+                    // logger.LogError("Error occurred during migration -" + ex.InnerException.Message);
                 }
 
             }
