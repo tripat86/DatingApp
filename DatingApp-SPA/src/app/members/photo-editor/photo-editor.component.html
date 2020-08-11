@@ -1,10 +1,16 @@
 <div class="row">
   <div class="col-sm-2" *ngFor="let photo of photos">
-    <img src="{{photo.url}}" alt="" class="img-thumbnail"/>
+      <div class="container" style="position:relative;padding-left:0px">
+        <img src="{{photo.url}}" alt="" class="img-thumbnail" [style.opacity]="!photo.isApproved ? '0.4' : '1'"/>
+        <div class="centered" 
+        [ngClass]="!photo.isApproved ? 'awaitingApproval' : ''"
+        *ngIf="!photo.isApproved">Awaiting approval</div>
+      </div>
+    
     <div class="text-center">
       <button class="btn btn-sm mr-1" (click)="setMainPhoto(photo)" 
       [ngClass]="photo.isMain ? 'btn-success active' : 'btn-secondary'"
-      [disabled]="photo.isMain">Main</button>
+      [disabled]="photo.isMain || !photo.isApproved">Main</button>
       <button class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></button>
     </div>
   </div>

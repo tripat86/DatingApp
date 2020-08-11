@@ -44,13 +44,13 @@ namespace DatingApp.API.Data
 
         public async Task<User> GetUser(int id)
         {
-            var User = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
+            var User = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
             return User;
         }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.Include(p => p.Photos).OrderByDescending(u => u.LastActive).AsQueryable();
+            var users = _context.Users.OrderByDescending(u => u.LastActive).AsQueryable();
 
             users = users.Where(user => user.Id != userParams.UserId && user.Gender == userParams.Gender);
 
@@ -100,10 +100,7 @@ namespace DatingApp.API.Data
 
         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
         {
-            var user = await _context.Users
-                        .Include(x => x.Likers)
-                        .Include(x => x.Likees)
-                        .FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
 
             if(likers)
             {
@@ -127,10 +124,7 @@ namespace DatingApp.API.Data
 
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            var messages = _context.Messages
-                    .Include(m => m.Sender).ThenInclude(u => u.Photos)
-                    .Include(m => m.Recipient).ThenInclude(u => u.Photos)
-                    .AsQueryable();
+            var messages = _context.Messages.AsQueryable();
 
             switch(messageParams.MessageContainer)
             {
@@ -161,6 +155,11 @@ namespace DatingApp.API.Data
                     .ToListAsync();
             
             return messages;
+        }
+
+        public async Task<IEnumerable<Photo>> GetPhotosForApproval()
+        {
+            return await _context.Photos.Where(p => p.IsApproved == false).ToListAsync();
         }
     }
 }

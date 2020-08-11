@@ -11,9 +11,10 @@
     <li class="nav-item" routerLinkActive="active">
       <a class="nav-link"  [routerLink]="['/messages']">Messages</a>
     </li>
-    <li class="nav-item" *ngIf="loggedIn()">
-      <a class="nav-link" href="#" (click)="logout()">Logout</a>
+    <li *appHasRole="['Admin', 'Moderator']" class="nav-item" routerLinkActive="active">
+      <a class="nav-link"  [routerLink]="['/admin']">Admin</a>
     </li>
+
   </ul>
 
   <div class="dropdown" dropdown  *ngIf="loggedIn()">

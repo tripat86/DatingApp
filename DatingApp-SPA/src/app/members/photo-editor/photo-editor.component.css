@@ -1,13 +1,22 @@
 img.img-thumbnail {
-    height: 100px;
-    min-width: 100px !important;
-    margin-bottom: 2px;
+  height: 100px;
+  min-width: 100px !important;
+  margin-bottom: 2px;
 }
 
 .nv-file-over {
-    border: dotted 3px red;
+  border: dotted 3px red;
 }
 
-input[type=file] {
-    color:transparent;
+input[type="file"] {
+  color: transparent;
+}
+
+.awaitingApproval {
+    position: absolute;
+    margin-top: -52px;
+    margin-left:12%;
+    position: absolute;
+    color: red;
+    font-size: 0.9rem;
 }

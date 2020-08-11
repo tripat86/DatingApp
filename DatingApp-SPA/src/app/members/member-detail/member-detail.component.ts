@@ -9,7 +9,7 @@ import {
   NgxGalleryAnimation,
   NgxGalleryImageSize,
 } from "ngx-gallery-9";
-import { TabsetComponent } from 'ngx-bootstrap/tabs/public_api';
+import { TabsetComponent } from "ngx-bootstrap/tabs/public_api";
 
 @Component({
   selector: "app-member-detail",
@@ -20,7 +20,7 @@ export class MemberDetailComponent implements OnInit {
   user: User;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
-  @ViewChild('memberTabs', { static: true }) memberTabs: TabsetComponent;
+  @ViewChild("memberTabs", { static: true }) memberTabs: TabsetComponent;
   messageTabVav: boolean;
   constructor(
     private userService: UserService,
@@ -57,8 +57,8 @@ export class MemberDetailComponent implements OnInit {
     ];
     this.galleryImages = this.getImages();
 
-    this.route.queryParams.subscribe(params => {
-      const selectedTab = params['tab'];
+    this.route.queryParams.subscribe((params) => {
+      const selectedTab = params["tab"];
       this.memberTabs.tabs[selectedTab > 0 ? selectedTab : 0].active = true;
     });
   }
@@ -70,12 +70,14 @@ export class MemberDetailComponent implements OnInit {
   getImages() {
     const images = [];
     for (const photo of this.user.photos) {
-      images.push({
-        small: photo.url,
-        medium: photo.url,
-        big: photo.url,
-        description: photo.description,
-      });
+      if (photo.isApproved) {
+        images.push({
+          small: photo.url,
+          medium: photo.url,
+          big: photo.url,
+          description: photo.description,
+        });
+      }
     }
     return images;
   }

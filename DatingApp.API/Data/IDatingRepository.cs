@@ -29,5 +29,7 @@ namespace DatingApp.API.Data
 
         Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
 
+        Task<IEnumerable<Photo>> GetPhotosForApproval();
+
     }
 }

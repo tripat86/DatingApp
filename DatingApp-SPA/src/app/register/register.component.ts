@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.bsConfig = Object.assign({}, { containerClass: this.colorTheme });
+    
     this.registerForm = this.fb.group({
       gender: ['male'],
       username: ['', Validators.required],

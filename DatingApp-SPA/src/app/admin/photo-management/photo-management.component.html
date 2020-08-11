@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-2" *ngFor="let photo of photos">
+      <div class="container" style="position:relative">
+        <img src="{{photo.url}}" alt="" class="img-thumbnail"/>
+      </div>
+    
+    <div class="text-center mt-2">
+      <button class="btn btn-sm btn-success mr-1" (click)="updatePhotoStatus(photo.id,'Activate')">Activate</button>
+      <button class="btn btn-sm btn-danger" (click)="updatePhotoStatus(photo.id,'Reject')">Reject</button>
+    </div>
+  </div>
+</div>
