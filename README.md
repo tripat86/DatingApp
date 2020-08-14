@@ -8,7 +8,11 @@ Azure published - https://dappdemo.azurewebsites.net/ - Register with your infor
 
 Dating App ( Angular 9 / .Net WebAPI Core (v 3.0) / Entity Framework core ( v 3.0) / SQL Server)
 
-- Identity and Role Management
+- Identity and Role Management for user logins. Created policies so that Api end points are accessible to users with specific roles.
+
+- Created route guards to protect routes specific to Admin User.
+
+- Also created custom structural Directive to protect routes
 
 - Persist data using Entity Framework Core.
 
